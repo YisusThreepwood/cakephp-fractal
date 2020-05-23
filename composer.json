@@ -1,0 +1,18 @@
+{
+    "name": "chustilla/cakephp-fractal",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Chustilla\\CakePHP\\Fractal\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
