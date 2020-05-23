@@ -1,0 +1,14 @@
+{
+  "name": "chustilla/cakephp-fractal",
+  "description": "",
+  "type": "library",
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chustilla\\CakePHPFractal\\": "src"
+    }
+  },
+  "minimum-stability": "dev"
+}
