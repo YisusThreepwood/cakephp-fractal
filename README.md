@@ -6,11 +6,11 @@ The package provide a simple wrapper around [Factral](https://fractal.thephpleag
 inspired by [Laravel fractal](https://github.com/spatie/laravel-fractal).
 
 Requirements
-___
+---
  + PHP >=7.2
 
 Installation
-___
+---
 Via Composer
 
 ```
@@ -18,7 +18,7 @@ $ composer install chustilla/cakephp-fractal
 ```
 
 Usage
-___
+---
 For simpler usage, the package provide a helper
 ```php
 #src/Controller/VideoGamesController.php
@@ -45,5 +45,5 @@ fractal(
 ```
 
 License
-___
+---
 The MIT License (MIT). Please see [License File](./LICENSE) for more information.
