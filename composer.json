@@ -8,6 +8,7 @@
         "api",
         "transform"
     ],
+    "type": "library",
     "homepage": "https://github.com/chustilla/cakephp-fractal",
     "license": "MIT",
     "authors": [
@@ -30,5 +31,7 @@
         "files": [
             "src/helpers.php"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
