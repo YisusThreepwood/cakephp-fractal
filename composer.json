@@ -1,6 +1,22 @@
 {
     "name": "chustilla/cakephp-fractal",
-    "version": "1.0",
+    "description": "An easy to use Fractal integration for CakePHP 3 applications",
+    "keywords": [
+        "cakephp-fractal",
+        "cakephp",
+        "fractal",
+        "api",
+        "transform"
+    ],
+    "homepage": "https://github.com/chustilla/cakephp-fractal",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesús Hernando Sancha",
+            "email": "jesushs80@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
