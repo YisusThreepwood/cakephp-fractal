@@ -14,13 +14,22 @@ class Fractal implements Fractable
     private $data;
     private $transformer;
     private $fractalizer;
+    private $extraData;
+    private $resourceKey;
 
-    public function __construct($data, $transformer, ?SerializerAbstract $serializer = null)
-    {
+    public function __construct(
+        $data,
+        $transformer,
+        ?array $extraData = null,
+        ?SerializerAbstract $serializer = null,
+        ?string $resourceKey = null
+    ) {
         $this->data = $data;
         $this->transformer = $transformer;
         $this->fractalizer = new Manager();
         $this->fractalizer->setSerializer($serializer ?: new CustomArraySerializer());
+        $this->extraData = $extraData;
+        $this->resourceKey = $resourceKey;
     }
 
     public function respond($status = 200, $headers = [])
@@ -29,7 +38,7 @@ class Fractal implements Fractable
             new Collection($this->data, $this->transformer)
         );
 
-        return ResponseFactory::create($data->toJson())->withStatus($status);
+        return ResponseFactory::create($data->toJson(), $this->extraData, $this->resourceKey)->withStatus($status);
     }
 
     public function parseIncludes($includes): Fractable
