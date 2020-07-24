@@ -2,11 +2,13 @@
 
 namespace Chustilla\Fractal;
 
+use Cake\ORM\Entity;
 use Chustilla\Fractal\contracts\Fractable;
 use Chustilla\Fractal\factories\ResponseFactory;
 use Chustilla\Fractal\serializers\CustomArraySerializer;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use League\Fractal\Serializer\SerializerAbstract;
 
 class Fractal implements Fractable
@@ -35,10 +37,16 @@ class Fractal implements Fractable
     public function respond($status = 200, $headers = [])
     {
         $data = $this->fractalizer->createData(
-            new Collection($this->data, $this->transformer)
+            is_a($this->data, Entity::class)
+                ? new Item($this->data, $this->transformer)
+                : new Collection($this->data, $this->transformer)
         );
 
-        return ResponseFactory::create($data->toJson(), $this->extraData, $this->resourceKey)->withStatus($status);
+        return ResponseFactory::create(
+            !is_array($data) ? $data->toJson() : $data,
+            $this->extraData,
+            $this->resourceKey
+        )->withStatus($status);
     }
 
     public function parseIncludes($includes): Fractable
