@@ -21,7 +21,7 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
-        "cakephp/cakephp": "3.7.*",
+        "cakephp/cakephp": "3.7.* || 4.0.*",
         "league/fractal": "^0.19.2"
     },
     "autoload": {
